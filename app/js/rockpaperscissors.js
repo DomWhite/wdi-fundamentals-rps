@@ -31,8 +31,6 @@ function getPlayerMove(move) {
     return move;
 }
 
-console.log(playerMove);
-
 function getComputerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
@@ -75,18 +73,35 @@ else if (playerMove === "scissors") {
 return winner;
 }
 
-//getPlayerMove();
-// getComputerMove();
-// console.log(computerMove);
-// getWinner(playerMove, computerMove);
-
+function game() {
+    getPlayerMove();
+    getComputerMove();
+    return getWinner(playerMove, computerMove);
+}
 
 function playToFive() {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
     var computerWins = 0;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
-    /* YOUR CODE HERE */
+    // After each 'round', display some text in the console indicating who played what, who won, and what the current scoreboard looks like.
+    // For example,
+    //  console.log("Player chose " + playerMove + " while Computer chose " + computerMove);
+    //  console.log("The score is currently " + playerWins + " to " + computerWins + "\n");
+
+   while (playerWins < 5 & computerWins < 5) {
+    	var winner = game();
+    	if (winner === "player") {
+    		playerWins += 1;
+    	} else if (winner === "computer") {
+    		computerWins += 1;
+    	} else {
+    	    console.log("DRAW!!!");
+    	}
+    console.log("Player chose " + playerMove + " while Computer chose " + computerMove);
+    console.log("The score is currently: Player - " + playerWins + " to Computer - " + computerWins + "\n");
+    }
+
     return [playerWins, computerWins];
 }
 
