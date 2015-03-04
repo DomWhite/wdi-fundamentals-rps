@@ -89,7 +89,7 @@ function playToFive() {
     //  console.log("Player chose " + playerMove + " while Computer chose " + computerMove);
     //  console.log("The score is currently " + playerWins + " to " + computerWins + "\n");
 
-   while (playerWins < 5 & computerWins < 5) {
+   while (playerWins < 5 & computerWins < 5) {  ///ASK ABOUT 'SHORT CIRCUITING' OPERATORS
     	var winner = game();
     	if (winner === "player") {
     		playerWins += 1;
